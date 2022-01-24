@@ -10,6 +10,9 @@ function App() {
 				wins! takes the round Round tied Restart game? Quit Next round No,
 				cancel Yes, restart{' '}
 			</p>
+			<button className='button button-primary text-dark button-gold'>
+				Button 1
+			</button>
 		</div>
 	)
 }
