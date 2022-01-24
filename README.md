@@ -1,7 +1,6 @@
+# Frontend Mentor - Tic Tac Toe
 
-# Frontend Mentor - [CHANGE THIS]
-
-This is a solution for [CHANGE THIS]
+This is a solution for the Frontend Mentor Tic Tac Toe challenge
 
 ## Table of contents
 
@@ -59,4 +58,3 @@ This is a solution for [CHANGE THIS]
 
 - Website - [Jaidanbrown.dev](https://jaidanbrown.dev)
 - Frontend Mentor - [@JaidanBrown](https://www.frontendmentor.io/profile/JaidanBrown)
-
