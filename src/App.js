@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<p>
+				{' '}
+				Pick player 1's mark Remember: X goes first New Game (vs CPU) New Game
+				(vs player) turn X (You) Ties X (CPU) Oh no, you lost You won! Player
+				wins! takes the round Round tied Restart game? Quit Next round No,
+				cancel Yes, restart{' '}
+			</p>
+		</div>
+	)
 }
 
-export default App;
+export default App
