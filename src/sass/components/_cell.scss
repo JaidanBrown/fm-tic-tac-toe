@@ -4,7 +4,6 @@
 	background: $dark-blue-200;
 	box-shadow: 0 8px 0 0 #10212a;
 	padding: 4em;
-	margin: 0.6em;
 	border-radius: 1em;
 	transition: 0.1s ease;
 
@@ -12,5 +11,6 @@
 		transition: 0.1s ease;
 		box-shadow: 0 4px 0 0 #10212a;
 		transform: translateY(4px);
+		cursor: pointer;
 	}
 }
