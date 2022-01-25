@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { ReactComponent as IconX } from '../assets/icon-x.svg'
 import { ReactComponent as IconO } from '../assets/icon-o.svg'
+import { ReactComponent as IconRestart } from '../assets/icon-restart.svg'
+import { ReactComponent as IconLogo } from '../assets/logo.svg'
 
 const winConditions = [
 	[0, 1, 2],
@@ -60,8 +62,25 @@ const Board = () => {
 
 	return (
 		<div className='board'>
-			<div>{turn}</div>
 			<div className='board-grid'>
+				<div className='board-logo'>
+					<IconLogo />
+				</div>
+				<div className='board-turn-container'>
+					<div className='board-turn'>
+						{turn === 'x' ? (
+							<IconX className='icon-small' />
+						) : (
+							<IconO className='icon-small' />
+						)}{' '}
+						<h2 className='text-light'>TURN</h2>
+					</div>
+				</div>
+				<div className='board-restart'>
+					<button className='button button-light'>
+						<IconRestart />
+					</button>
+				</div>
 				<Cell num={0} />
 				<Cell num={1} />
 				<Cell num={2} />
@@ -73,7 +92,6 @@ const Board = () => {
 				<Cell num={8} />
 			</div>
 			<div>{winner}</div>
-			<div>{JSON.stringify(cells, null, 2)}</div>
 		</div>
 	)
 }

@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.icon-small {
+	transform: scale(0.4);
+}
+
+.icon-light path {
+	fill: $light-grey-100;
+}

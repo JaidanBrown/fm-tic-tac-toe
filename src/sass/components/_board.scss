@@ -5,3 +5,29 @@
 	gap: 20px;
 	grid-template-columns: repeat(3, 1fr);
 }
+
+.board-turn-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.board-turn {
+	display: flex;
+	align-items: center;
+	background: $dark-blue-200;
+	border-radius: 1em;
+	box-shadow: 0 8px 0 0 #10212a;
+	width: 100%;
+}
+
+.board-logo {
+	display: flex;
+	align-items: flex-end;
+}
+
+.board-restart {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
