@@ -42,6 +42,12 @@ const Board = () => {
 		})
 	}
 
+	const handleReset = () => {
+		setWinner('')
+		setTurn('x')
+		setCells(new Array(9).fill(''))
+	}
+
 	const handleClick = (num) => {
 		const newCells = [...cells]
 		if (newCells[num] !== '') {
@@ -54,12 +60,9 @@ const Board = () => {
 	}
 
 	const handleHover = (e) => {
-		console.log(e.target.id)
-		console.log(cells[e.target.id])
 		if (cells[e.target.id] === '') {
 			setCurrentHoverState(turn)
 		} else {
-			console.log('DONT ALLOW')
 			setCurrentHoverState('')
 		}
 	}
@@ -94,7 +97,7 @@ const Board = () => {
 					</div>
 				</div>
 				<div className='board-restart'>
-					<button className='button button-light'>
+					<button className='button button-light' onClick={handleReset}>
 						<IconRestart />
 					</button>
 				</div>
