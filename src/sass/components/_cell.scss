@@ -23,3 +23,15 @@
 		background: $dark-blue-300;
 	}
 }
+
+.o {
+	&:hover::before {
+		content: url('../../assets/icon-o-outline.svg');
+	}
+}
+
+.x {
+	&:hover::before {
+		content: url('../../assets/icon-x-outline.svg');
+	}
+}

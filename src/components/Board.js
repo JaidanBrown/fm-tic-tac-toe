@@ -19,6 +19,7 @@ const Board = () => {
 	const [turn, setTurn] = useState('x')
 	const [cells, setCells] = useState(new Array(9).fill(''))
 	const [winner, setWinner] = useState('')
+	const [currentHoverState, setCurrentHoverState] = useState('x')
 
 	useEffect(() => {
 		checkWinner()
@@ -52,9 +53,25 @@ const Board = () => {
 		setCells(newCells)
 	}
 
+	const handleHover = (e) => {
+		console.log(e.target.id)
+		console.log(cells[e.target.id])
+		if (cells[e.target.id] === '') {
+			setCurrentHoverState(turn)
+		} else {
+			console.log('DONT ALLOW')
+			setCurrentHoverState('')
+		}
+	}
+
 	const Cell = ({ num }) => {
 		return (
-			<div onClick={() => handleClick(num)} className='cell'>
+			<div
+				id={num}
+				onClick={() => handleClick(num)}
+				onMouseEnter={(e) => handleHover(e)}
+				className={`${currentHoverState} cell`}
+			>
 				{cells[num] === 'x' ? <IconX /> : cells[num] === 'o' ? <IconO /> : ''}
 			</div>
 		)
