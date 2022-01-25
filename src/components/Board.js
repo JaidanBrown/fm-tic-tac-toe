@@ -2,15 +2,24 @@ import React, { useState } from 'react'
 
 const Board = () => {
 	const [turn, setTurn] = useState('x')
+	const [cells, setCells] = useState(new Array(9).fill(''))
 
-	const handleClick = (cell) => {
+	const handleClick = (num) => {
+		const newCells = [...cells]
 		turn === 'x' ? setTurn('o') : setTurn('x')
+		console.log(cells)
+		if (newCells[num] != '') {
+			return
+		} else {
+			setCells(newCells)
+			newCells[num] = turn
+		}
 	}
 
 	const Cell = ({ num }) => {
 		return (
 			<td onClick={() => handleClick(num)} className='cell'>
-				-
+				{cells[num]}
 			</td>
 		)
 	}

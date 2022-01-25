@@ -7,10 +7,15 @@
 	border-radius: 1em;
 	transition: 0.1s ease;
 
-	&:hover {
+	&:active {
 		transition: 0.1s ease;
 		box-shadow: 0 4px 0 0 #10212a;
 		transform: translateY(4px);
 		cursor: pointer;
+	}
+
+	&:hover {
+		transition: 0.1s ease;
+		background: $dark-blue-300;
 	}
 }
