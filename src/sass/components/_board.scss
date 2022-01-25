@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
-.board table {
-	border-collapse: separate;
-	border-spacing: 1em;
+.board-grid {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
 }
