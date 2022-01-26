@@ -20,6 +20,7 @@ const Board = () => {
 	const [cells, setCells] = useState(new Array(9).fill(''))
 	const [winner, setWinner] = useState('')
 	const [currentHoverState, setCurrentHoverState] = useState('x')
+	const [modalVisible, setModalVisible] = useState(false)
 
 	useEffect(() => {
 		checkWinner()
@@ -38,6 +39,7 @@ const Board = () => {
 				cells[condition[1]] === cells[condition[2]]
 			) {
 				setWinner('Winner')
+				setModalVisible(true)
 			}
 		})
 	}
@@ -89,42 +91,61 @@ const Board = () => {
 		)
 	}
 
-	return (
-		<div className='board'>
-			<div className='board-grid'>
-				<div className='board-logo'>
-					<IconLogo />
-				</div>
-				<div className='board-turn-container'>
-					<div className='board-turn'>
-						{turn === 'x' ? (
-							<IconX className='icon-small' />
-						) : (
-							<IconO className='icon-small' />
-						)}{' '}
-						<h2 className='text-light'>TURN</h2>
+	const Modal = () => {
+		return (
+			<div class='modal'>
+				<div class='modal-inner'>
+					<h2>Top text here</h2>
+					<h1>Winner text here</h1>
+					<div>
+						<button class='button button-light'>Quit</button>
+						<button class='button button-gold'>Next Round</button>
 					</div>
 				</div>
-				<div className='board-restart'>
-					<button className='button button-light' onClick={handleReset}>
-						<IconRestart />
-					</button>
-				</div>
-				<Cell num={0} />
-				<Cell num={1} />
-				<Cell num={2} />
-				<Cell num={3} />
-				<Cell num={4} />
-				<Cell num={5} />
-				<Cell num={6} />
-				<Cell num={7} />
-				<Cell num={8} />
-				<WinCount title='X (P1)' score='20' color='win-count-blue' />
-				<WinCount title='Ties' score='20' color='win-count-light' />
-				<WinCount title='O (P2)' score='20' color='win-count-gold' />
 			</div>
-			<div>{winner}</div>
-		</div>
+		)
+	}
+
+	return (
+		<>
+			{modalVisible ? <Modal /> : null}
+
+			<div className='board'>
+				<div className='board-grid'>
+					<div className='board-logo'>
+						<IconLogo />
+					</div>
+					<div className='board-turn-container'>
+						<div className='board-turn'>
+							{turn === 'x' ? (
+								<IconX className='icon-small' />
+							) : (
+								<IconO className='icon-small' />
+							)}{' '}
+							<h2 className='text-light'>TURN</h2>
+						</div>
+					</div>
+					<div className='board-restart'>
+						<button className='button button-light' onClick={handleReset}>
+							<IconRestart />
+						</button>
+					</div>
+					<Cell num={0} />
+					<Cell num={1} />
+					<Cell num={2} />
+					<Cell num={3} />
+					<Cell num={4} />
+					<Cell num={5} />
+					<Cell num={6} />
+					<Cell num={7} />
+					<Cell num={8} />
+					<WinCount title='X (P1)' score='20' color='win-count-blue' />
+					<WinCount title='Ties' score='20' color='win-count-light' />
+					<WinCount title='O (P2)' score='20' color='win-count-gold' />
+				</div>
+				<div>{winner}</div>
+			</div>
+		</>
 	)
 }
 

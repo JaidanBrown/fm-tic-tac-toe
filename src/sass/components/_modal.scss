@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.modal {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-inner {
+	background: $dark-blue-200;
+	width: 100%;
+	height: 30vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
