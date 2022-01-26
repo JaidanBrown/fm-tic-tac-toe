@@ -80,6 +80,15 @@ const Board = () => {
 		)
 	}
 
+	const WinCount = ({ title, score, color }) => {
+		return (
+			<div className={`${color} win-count`}>
+				<p>{title}</p>
+				<h2>{score}</h2>
+			</div>
+		)
+	}
+
 	return (
 		<div className='board'>
 			<div className='board-grid'>
@@ -110,6 +119,9 @@ const Board = () => {
 				<Cell num={6} />
 				<Cell num={7} />
 				<Cell num={8} />
+				<WinCount title='X (P1)' score='20' color='win-count-blue' />
+				<WinCount title='Ties' score='20' color='win-count-light' />
+				<WinCount title='O (P2)' score='20' color='win-count-gold' />
 			</div>
 			<div>{winner}</div>
 		</div>

@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.win-count {
+	background: $dark-blue-200;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 2em;
+	border-radius: 1em;
+	color: $dark-blue-100;
+}
+
+.win-count-blue {
+	background: $light-blue-200;
+}
+
+.win-count-light {
+	background: $light-grey-200;
+}
+
+.win-count-gold {
+	background: $neutral-gold-200;
+}
