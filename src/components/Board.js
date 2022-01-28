@@ -48,6 +48,7 @@ const Board = () => {
     setWinner('')
     setTurn('x')
     setCells(new Array(9).fill(''))
+    setModalVisible(false)
   }
 
   const handleClick = (num) => {
@@ -96,13 +97,18 @@ const Board = () => {
 
   const Modal = () => {
     return (
-      <div class='modal'>
-        <div class='modal-inner'>
-          <h2>Top text here</h2>
-          <h1>Winner text here</h1>
-          <div>
-            <button class='button button-light'>Quit</button>
-            <button class='button button-gold'>Next Round</button>
+      <div className='modal'>
+        <div className='modal-inner'>
+          <h4>ON NO, YOU LOST...</h4>
+          <div className='modal-winner'>
+            <IconO />
+            <h1>TAKES THE ROUND</h1>
+          </div>
+          <div className='modal-buttons'>
+            <button className='button button-light' onClick={handleReset}>
+              Quit
+            </button>
+            <button className='button button-gold'>Next Round</button>
           </div>
         </div>
       </div>
